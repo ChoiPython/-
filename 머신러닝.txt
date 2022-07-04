@@ -13,9 +13,21 @@ Supervised Learning - 지도 학습 - 정답이 있는 데이터를 기반으로
 - Dependent variable 종속 변수 (결과) - Y(출력 변수, target, label)
 - 최적의 선 -  y = mx + b | m : 기울기(slope, coefficient)
 				    b : y 절편(intercept)
+- 실제 값과 예측 값 차이의 제곱의 합을 최소화 : sum(y0 - y1)^2
+										    : 잔차 제곱의 합 : RSS(Residual Sum of Squares) = SSR(Sum of Squared Residuals)
+											: 최소제곱법 : OLS(Ordinary Least Squares) = Least Square Method - 잔차 제곱의 합의 최소식을 찾는 법 / 노이즈(이상 값에 벗어난 데이터)에 최약함
+
 
 4. 데이터 세트 분리 - 훈련 세트(Train set)  	 80 : X_train, y_train
 				   - 테스트 세트(Test set) 	    20 : X_test, y_tset
+
+
+5. 경사 하강법(Gradient Descent) - 학습률을 기반으로 최소의 로스율(기울기 = 0 으로 만드는 것이 목표)을 구함 즉, 최적화하는 방법
+								- 많이 쓰이는 학습률(0.001, 0.003, 0.01, 0.03, 0.1, 0.3)
+								- 에포크(Epoch) - 최적의 값을 찾기 위해 모든 데이터를 한 번씩 사용하는 방법
+
+5-1. 확률적 경사 하강법(Stochastic Fradient Descent)
+
 
 Unsupercised Learning - 비지도 학습 - 정답이 없는 데이터를 기반으로 학습, 데이터의 유의미한 패턴 / 구조 발견
 
