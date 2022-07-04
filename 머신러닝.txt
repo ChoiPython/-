@@ -8,6 +8,14 @@ Supervised Learning - 지도 학습 - 정답이 있는 데이터를 기반으로
 - 예측 결과가 숫자가 아닐 때 ex) 스펨 메일 필터링, 시험 합격 여부, 재활용 분리수거 품목, 악성 종양 여부
 
 
+3. Linear Regression(선형 회귀) - 
+- Independent variable 독립 변수 (원인) - X(입력 변수, feature) 
+- Dependent variable 종속 변수 (결과) - Y(출력 변수, target, label)
+- 최적의 선 -  y = mx + b | m : 기울기(slope, coefficient)
+				    b : y 절편(intercept)
+
+4. 데이터 세트 분리 - 훈련 세트(Train set)  	 80 : X_train, y_train
+				   - 데스트 세트(Test set) 	    20 : X_test, y_tset
 
 Unsupercised Learning - 비지도 학습 - 정답이 없는 데이터를 기반으로 학습, 데이터의 유의미한 패턴 / 구조 발견
 
