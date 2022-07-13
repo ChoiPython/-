@@ -33,13 +33,34 @@ y_pred = reg.predict(X_test)
 # print(y_pred)       # [ 92.15457859  10.23753043 108.36245302  38.14675204]
 # print(y_test)       # [ 90   8 100  38]
 
-print(reg.coef_)        # 기울기 m값 - [-5.82712824 -1.04450647 10.40419528 -1.64200104]
-print(reg.intercept_)   # y절편 b값 - 5.365006706544783
+# print(reg.coef_)        # 기울기 m값 - [-5.82712824 -1.04450647 10.40419528 -1.64200104]
+# print(reg.intercept_)   # y절편 b값 - 5.365006706544783
 
 #ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ모델 평가ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-print(reg.score(X_train, y_train))  # 훈련세트      # 0.9623352565265527
-print(reg.score(X_test, y_test))    # 테스트 세트   # 0.9859956178877447
+# print(reg.score(X_train, y_train))  # 훈련세트      # 0.9623352565265527
+# print(reg.score(X_test, y_test))    # 테스트 세트   # 0.9859956178877447
+### LinearRegression 평가는 r2_score형식으로 계산한다.
 
+### 다양한 평가 지표 (회귀 모델)
+'''1. MAE (Mean Absolute Error) : (실제 값과 예측 값) 차이의 절대값
+   2. MSE (Mean Squared Error) : 차이의 제곱
+   3. RMSE (Root Mean Squared Error) : 차이의 제곱에 루트
+   4. R^2 : (결정계수)
+        - R^2는 1에 가까울수록, 나머지는 0에 가까울수록 좋음'''
+
+#ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡMAEㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+from sklearn.metrics import mean_absolute_error
+print(mean_absolute_error(y_test, y_pred)) # 실제 값, 예측 값 # MAE - 3.2253285188287943
+
+from sklearn.metrics import mean_squared_error
+print(mean_squared_error(y_test, y_pred)) # MSE
+
+from sklearn.metrics import mean_squared_error
+print(mean_squared_error(y_test, y_pred, squared=False)) # RMSE
+
+from sklearn.metrics import r2_score
+print(r2_score(y_test, y_pred))        # r2
 
 
 
